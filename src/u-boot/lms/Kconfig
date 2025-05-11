@@ -1,0 +1,9 @@
+config LMS
+	bool "Use LMS PQC Signature support"
+	depends on FIT_SIGNATURE
+	select SHA256
+	help
+	  Enable LMS support for FIT image verification using a post-quantum
+	  signature algorithm based on LMS. This implementation uses the OQS
+	  library. The LMS public key is expected to be stored (for instance)
+	  in the control FDT in a node with properties named "lms,public-key".
